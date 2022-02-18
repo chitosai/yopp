@@ -1,0 +1,16 @@
+@import-normalize;
+
+/* donno why it doesn't reset body margin... */
+
+body {
+    margin: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

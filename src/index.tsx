@@ -5,6 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import './css/index.css';
 import PreAuth from "./pages/preauth";
 import Registration from "./pages/registration";
 import User from "./pages/user";
