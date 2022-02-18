@@ -3,6 +3,7 @@
 /* donno why it doesn't reset body margin... */
 
 body {
+    font-size: 16px;
     margin: 0;
 }
 

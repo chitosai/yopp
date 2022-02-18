@@ -1,0 +1,48 @@
+.wrapper {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 250px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.desc {
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 0 20px 0;
+}
+
+.input {
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.6em;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #6F1DF4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 35px;
+    /* align itsef to bottom, in production we may need a better and more general way to do that but since it's a test we just do it on button itself */
+    margin-top: auto;
+    justify-self: flex-end;
+}
+
+.button:active {
+    background-color: #a66fff;
+}
