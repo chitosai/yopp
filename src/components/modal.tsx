@@ -22,21 +22,28 @@ Modal.Desc = function({children}: {children: string;}) {
 }
 
 export type InputProps = {
+    type?: string;
     placeholder?: string;
+    disabled?: boolean;
+    onChange: (text: string) => void;
 }
 
-Modal.Input = function({placeholder = ''}: InputProps) {
+Modal.Input = function({type = 'text', placeholder = '', disabled = false, onChange}: InputProps) {
+    function _onChange(e: React.ChangeEvent<HTMLInputElement>) {
+        onChange(e?.target?.value || '');
+    }
     return (
-        <input className={styles.input} placeholder={placeholder} />
+        <input type={type} className={styles.input} placeholder={placeholder} disabled={disabled} onChange={_onChange} />
     );
 }
 
 export type ButtonProps = {
     text: string;
+    onClick: () => void;
 }
 
-Modal.Button = function({text}: ButtonProps) {
+Modal.Button = function({text, onClick}: ButtonProps) {
     return (
-        <button className={styles.button}>{text}</button>
+        <button className={styles.button} onClick={onClick}>{text}</button>
     );
 }
