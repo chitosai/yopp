@@ -36,7 +36,7 @@ export default function PreAuth() {
                 password,
             });
             const r = await res.json();
-            if (r.success) {
+            if (res.status === 200 && r.success) {
                 saveToken(r.token);
                 navigate('/user');
             } else {

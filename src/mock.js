@@ -15,11 +15,21 @@ export default function mock() {
                 }
             });
 
+            // user
+            this.get("/user", (scheme, request) => {
+                const { token } = request.queryParams;
+                if (token.length > 10) {
+                    return {
+                        name: 'Jim',
+                    }
+                } else {
+                    return new Response(401, {}, { errors: ['Illegal token'] })
+                }
+            });
+
             // login
             this.post("/sign-in", (scheme, request) => {
-                console.log(scheme)
                 const { email, password } = JSON.parse(request.requestBody);
-                console.log(1, email, password)
 
                 // password === '123' is correct, otherwise 401
                 if (password === '123') {
@@ -29,7 +39,7 @@ export default function mock() {
                     }
                 } else {
                     // ! status code not working
-                    return new Response(42, {}, { errors: ['password not match'] });
+                    return new Response(401, {}, { errors: ['password not match'] });
                 }
             });
         }

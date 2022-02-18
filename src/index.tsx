@@ -19,6 +19,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PreAuth />} />
+        <Route path="/preauth" element={<PreAuth />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/user" element={<User />} />
       </Routes>
