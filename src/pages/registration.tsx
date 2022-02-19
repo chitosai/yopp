@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Modal from '../components/modal';
-import { post, saveToken } from '../utils';
+import { post, saveToken, validateEmail } from '../utils';
 
 export default function Registration() {
     const location = useLocation() as {state: {email?: string;}};
@@ -16,7 +16,7 @@ export default function Registration() {
         if (!email) {
             return alert('Please enter your email');
         }
-        if (!email.includes('@')) {
+        if (!validateEmail(email)) {
             return alert('Not a valid email');
         }
         if (!username) {

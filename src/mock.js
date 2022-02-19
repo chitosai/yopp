@@ -11,7 +11,7 @@ export default function mock() {
 
                 // email ends in @yoppworks.com exists, otherwise not exists
                 return {
-                    exists: email.endsWith('@a.com'),
+                    exists: email.endsWith('@yoppworks.com'),
                 }
             });
 

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom"; 
 import Modal from '../components/modal';
-import {get, post, saveToken} from '../utils';
+import {get, post, saveToken, validateEmail} from '../utils';
 
 export default function PreAuth() {
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function PreAuth() {
         if (!email) {
             return alert('Please enter your email');
         }
-        if (!email.includes('@')) {
+        if (!validateEmail(email)) {
             return alert('Not a valid email');
         }
 
