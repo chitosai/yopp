@@ -24,7 +24,7 @@ export default function User() {
                 setUser(user);
             });
         }
-    }, []);
+    }, [navigate]);
 
     return (
         <div className='page'>

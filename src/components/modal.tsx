@@ -23,17 +23,18 @@ Modal.Desc = function({children}: {children: string;}) {
 
 export type InputProps = {
     type?: string;
+    defaultValue?: string;
     placeholder?: string;
     disabled?: boolean;
     onChange: (text: string) => void;
 }
 
-Modal.Input = function({type = 'text', placeholder = '', disabled = false, onChange}: InputProps) {
+Modal.Input = function({type = 'text', defaultValue = '', placeholder = '', disabled = false, onChange}: InputProps) {
     function _onChange(e: React.ChangeEvent<HTMLInputElement>) {
         onChange(e?.target?.value || '');
     }
     return (
-        <input type={type} className={styles.input} placeholder={placeholder} disabled={disabled} onChange={_onChange} />
+        <input type={type} defaultValue={defaultValue} className={styles.input} placeholder={placeholder} disabled={disabled} onChange={_onChange} />
     );
 }
 

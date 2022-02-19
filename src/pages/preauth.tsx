@@ -25,7 +25,11 @@ export default function PreAuth() {
             });
             const r: {exists: boolean;} = await res.json();
             if (!r.exists) {
-                navigate('/registration');
+                navigate('/registration', {
+                    state: {
+                        email,
+                    }
+                });
             } else {
                 setEmailVerified(true);
             }

@@ -42,6 +42,21 @@ export default function mock() {
                     return new Response(401, {}, { errors: ['password not match'] });
                 }
             });
+
+            // register
+            this.post("/register", (scheme, request) => {
+                const { email } = JSON.parse(request.requestBody);
+
+                // email ends in @google.com exists
+                if (!email.endsWith('@google.com')) {
+                    return {
+                        success: true,
+                        token: `dummytoken-${email}-${Date.now()}`,
+                    }
+                } else {
+                    return new Response(400, {}, { errors: ['Email already registered'] });
+                }
+            });
         }
     });
 }
